@@ -51,7 +51,7 @@ const keyframes = `
       border-color: #1e3a6e;
     }
     50% {
-      border-color: #60a5fa;
+      border-color: #60a5fa; 
     }
   }
 `;
@@ -131,7 +131,7 @@ export default function Home() {
               <h1 style={S.h1}>Hi, I&apos;m Stefan Perovski</h1>
               <p style={S.subtitle}>Chair of Digitalization · CS Student · Builder</p>
               <p style={S.bio}>
-                A computer science student at FINKI passionate about building impactful software and driving digital transformation.
+                A software engineering student at FINKI passionate about building impactful software and driving digital transformation.
                 I love solving hard problems, learning new technologies, and creating things that matter.
               </p>
               <div style={S.socialRow}>
