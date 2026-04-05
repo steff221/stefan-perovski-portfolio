@@ -65,7 +65,7 @@ const S = {
   navLink: { fontSize: "13px", color: "#7a9cc8", textDecoration: "none", letterSpacing: "0.04em", transition: "color 0.3s ease", cursor: "pointer" },
   navLinkHover: { color: "#60a5fa" },
   hero: { display: "flex", gap: "32px", alignItems: "flex-start", marginBottom: "72px", animation: "fadeIn 0.8s ease-out" },
-  avatar: { width: "96px", height: "96px", borderRadius: "50%", border: "2px solid #1e3a6e", flexShrink: 0, overflow: "hidden" as const, transition: "transform 0.3s ease, box-shadow 0.3s ease" },
+  avatar: { width: "140px", height: "140px", borderRadius: "50%", border: "2px solid #1e3a6e", flexShrink: 0, overflow: "hidden" as const, transition: "transform 0.3s ease, box-shadow 0.3s ease" },
   avatarHover: { transform: "scale(1.05)", boxShadow: "0 0 20px rgba(96, 165, 250, 0.4)" },
   h1: { fontFamily: "DM Serif Display, serif", fontSize: "30px", fontWeight: 400, marginBottom: "4px", lineHeight: "1.2", color: "#e2e8f0" },
   subtitle: { fontSize: "13px", color: "#60a5fa", marginBottom: "12px" },
@@ -125,7 +125,7 @@ export default function Home() {
           {/* HERO */}
           <section id="about" style={S.hero}>
             <div style={{...S.avatar, ...(hoveredBtn === 'avatar' ? S.avatarHover : {})}} onMouseEnter={() => setHoveredBtn('avatar')} onMouseLeave={() => setHoveredBtn(null)}>
-              <Image src="/pfp.jpg" alt="Stefan Perovski" width={128} height={128} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Image src="/pfp.jpg" alt="Stefan Perovski" width={180} height={180} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             </div>
             <div>
               <h1 style={S.h1}>Hi, I&apos;m Stefan Perovski</h1>
