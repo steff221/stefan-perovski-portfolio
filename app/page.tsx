@@ -232,7 +232,7 @@ export default function Home() {
 
           {/* FOOTER */}
           <footer style={S.footer}>
-            © 2025 Stean Perovski · All rights reserved.
+            © 2025 Stefan Perovski · All rights reserved.
           </footer>
 
         </div>
