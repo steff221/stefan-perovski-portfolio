@@ -231,7 +231,7 @@ export default function Home() {
               <div style={S.socialRow}>
                 <a href="https://github.com/steff221"     target="_blank" rel="noopener noreferrer" style={{...S.socialBtn, ...(hoveredBtn === 'github' ? S.socialBtnHover : {})}} onMouseEnter={() => setHoveredBtn('github')} onMouseLeave={() => setHoveredBtn(null)}>GitHub</a>
                 <a href="https://www.linkedin.com/in/stefan-perovski-a5b401294/" target="_blank" rel="noopener noreferrer" style={{...S.socialBtn, ...(hoveredBtn === 'linkedin' ? S.socialBtnHover : {})}} onMouseEnter={() => setHoveredBtn('linkedin')} onMouseLeave={() => setHoveredBtn(null)}>LinkedIn</a>
-                <a href="mailto:stefan.perovski20@fmail.com"                style={{...S.socialBtn, ...(hoveredBtn === 'email' ? S.socialBtnHover : {})}} onMouseEnter={() => setHoveredBtn('email')} onMouseLeave={() => setHoveredBtn(null)}>Email</a>
+                <a href="mailto:stefan.perovski20@gmail.com"                style={{...S.socialBtn, ...(hoveredBtn === 'email' ? S.socialBtnHover : {})}} onMouseEnter={() => setHoveredBtn('email')} onMouseLeave={() => setHoveredBtn(null)}>Email</a>
               </div>
             </div>
           </section>
