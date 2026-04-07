@@ -353,7 +353,7 @@ export default function Home() {
 
           {/* FOOTER */}
           <footer style={S.footer}>
-            © 2025 Stefan Perovski · All rights reserved.
+            © 2026 Stefan Perovski · All rights reserved.
           </footer>
 
         </div>
