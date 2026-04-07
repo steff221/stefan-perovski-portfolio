@@ -297,7 +297,7 @@ export default function Home() {
                   {["React", "Java", "Oracle SQL"].map(t => <span key={t} style={{...S.tag, ...(hoveredCard === 'proj1' ? S.tagHover : {})}}>{t}</span>)}
                 </div>
                 <div style={S.linksRow}>
-                  <a href="#" style={{...S.linkBtn, ...(hoveredCard === 'proj1' ? S.linkBtnHover : {})}}>GitHub</a>
+<a href="https://github.com/steff221/MedTech" target="_blank" rel="noopener noreferrer" style={{...S.linkBtn, ...(hoveredCard === 'proj1' ? S.linkBtnHover : {})}}>GitHub</a>
                 </div>
               </div>
 
