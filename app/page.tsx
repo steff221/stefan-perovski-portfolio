@@ -257,6 +257,23 @@ export default function Home() {
 
             <div style={{...S.card, ...(hoveredCard === 'exp2' ? S.cardHover : {})}} onMouseEnter={() => setHoveredCard('exp2')} onMouseLeave={() => setHoveredCard(null)}>
               <div style={S.cardHeader}>
+                <div style={S.logo}>LINK</div>
+                <div>
+                  <div style={S.cardTitle}>Lead Organizer — LINKER Hackathon</div>
+                  <div style={S.cardCompany}>FINKI / University Student Assembly</div>
+                </div>
+              </div>
+              <div style={S.cardMeta}>Apr 18–19, 2026 · Skopje</div>
+              <ul style={{ paddingLeft: "16px" }}>
+                <li style={S.bullet}>Identified a real market gap between students and employers and structured it into a concrete, solvable 48-hour challenge brief</li>
+                <li style={S.bullet}>Defined clear deliverable requirements and a 6-dimension evaluation framework covering relevance, innovation, functionality, UX/UI, impact, and presentation</li>
+                <li style={S.bullet}>Coordinated stakeholders across participants, mentors, judges, and companies throughout the event lifecycle</li>
+                <li style={S.bullet}>Produced structured documentation including the challenge brief, judging criteria, and event materials</li>
+              </ul>
+            </div>
+
+            <div style={{...S.card, ...(hoveredCard === 'exp3' ? S.cardHover : {})}} onMouseEnter={() => setHoveredCard('exp3')} onMouseLeave={() => setHoveredCard(null)}>
+              <div style={S.cardHeader}>
                 <div style={S.logo}>USA</div>
                 <div>
                   <div style={S.cardTitle}>Multimedia and Public Relations</div>
@@ -269,7 +286,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div style={{...S.card, ...(hoveredCard === 'exp3' ? S.cardHover : {})}} onMouseEnter={() => setHoveredCard('exp3')} onMouseLeave={() => setHoveredCard(null)}>
+            <div style={{...S.card, ...(hoveredCard === 'exp4' ? S.cardHover : {})}} onMouseEnter={() => setHoveredCard('exp4')} onMouseLeave={() => setHoveredCard(null)}>
               <div style={S.cardHeader}>
                 <div style={S.logo}>FINKI</div>
                 <div>
