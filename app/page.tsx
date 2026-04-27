@@ -65,6 +65,21 @@ const keyframes = `
       opacity: 1;
     }
   }
+
+  @keyframes badgePulse {
+    0% {
+      box-shadow: 0 0 0 rgba(96, 165, 250, 0);
+      transform: translateY(0);
+    }
+    50% {
+      box-shadow: 0 0 12px rgba(96, 165, 250, 0.35);
+      transform: translateY(-1px);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(96, 165, 250, 0);
+      transform: translateY(0);
+    }
+  }
 `;
 
 const darkTheme = {
@@ -127,7 +142,10 @@ const getThemeStyles = (isDark: boolean) => {
     projGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" },
     projCard: { background: theme.cardBg, border: `0.5px solid ${theme.accentDark}`, borderRadius: "12px", padding: "18px", transition: "all 0.3s ease", animation: "fadeIn 0.6s ease-out" },
     projCardHover: { borderColor: theme.accentLight, boxShadow: `0 0 20px rgba(96, 165, 250, 0.15)`, transform: "translateY(-4px)" },
+    projTitleRow: { display: "flex", alignItems: "center", gap: "8px" },
     projTitle: { fontSize: "13px", fontWeight: 500, color: theme.text, marginBottom: "5px" },
+    featuredBadge: { fontSize: "10px", padding: "2px 8px", borderRadius: "999px", border: `0.5px solid ${theme.accentLight}`, color: theme.accentLight, letterSpacing: "0.06em", textTransform: "uppercase" as const, transition: "all 0.2s ease" },
+    featuredBadgeHover: { animation: "badgePulse 0.8s ease-in-out" },
     projDesc: { fontSize: "12px", color: theme.textSecondary, marginBottom: "10px", lineHeight: "1.5" },
     tagsRow: { display: "flex", flexWrap: "wrap" as const, gap: "5px", marginBottom: "10px" },
     tag: { fontSize: "10px", padding: "3px 8px", background: `${isDark ? "rgba(59,130,246,0.1)" : "rgba(59,130,246,0.05)"}`, border: `0.5px solid ${isDark ? "rgba(59,130,246,0.3)" : "rgba(59,130,246,0.2)"}`, borderRadius: "20px", color: theme.accentLight, transition: "all 0.2s ease" },
@@ -307,14 +325,29 @@ export default function Home() {
             <h2 style={S.sectionTitle}>Projects</h2>
             <div style={S.projGrid}>
 
+              <div style={{...S.projCard, ...(hoveredCard === 'proj2' ? S.projCardHover : {})}} onMouseEnter={() => setHoveredCard('proj2')} onMouseLeave={() => setHoveredCard(null)}>
+                <div style={S.projTitleRow}>
+                  <h3 style={S.projTitle}>WaterWatch</h3>
+                  <span style={{...S.featuredBadge, ...(hoveredCard === 'proj2' ? S.featuredBadgeHover : {})}}>Featured</span>
+                </div>
+                <p style={S.projDesc}>Early warning platform for river water anomalies using Sentinel-1/2 imagery, z-score analysis, and citizen crowdsourcing.</p>
+                <div style={S.tagsRow}>
+                  {(["Python", "Flask", "React", "Copernicus API"]).map(t => <span key={t} style={{...S.tag, ...(hoveredCard === 'proj2' ? S.tagHover : {})}}>{t}</span>)}
+                </div>
+                <div style={S.linksRow}>
+                  <a href="https://water-watch-2t91.vercel.app" target="_blank" rel="noopener noreferrer" style={{...S.linkBtn, ...(hoveredCard === 'proj2' ? S.linkBtnHover : {})}}>Live</a>
+                  <a href="https://github.com/steff221/WaterWatch" target="_blank" rel="noopener noreferrer" style={{...S.linkBtn, ...(hoveredCard === 'proj2' ? S.linkBtnHover : {})}}>GitHub</a>
+                </div>
+              </div>
+
               <div style={{...S.projCard, ...(hoveredCard === 'proj1' ? S.projCardHover : {})}} onMouseEnter={() => setHoveredCard('proj1')} onMouseLeave={() => setHoveredCard(null)}>
                 <h3 style={S.projTitle}>MedTech App</h3>
                 <p style={S.projDesc}>Medical technology application with a Java backend, React frontend, and Oracle SQL database.</p>
                 <div style={S.tagsRow}>
-                  {["React", "Java", "Oracle SQL"].map(t => <span key={t} style={{...S.tag, ...(hoveredCard === 'proj1' ? S.tagHover : {})}}>{t}</span>)}
+                  {(["React", "Java", "Oracle SQL"]).map(t => <span key={t} style={{...S.tag, ...(hoveredCard === 'proj1' ? S.tagHover : {})}}>{t}</span>)}
                 </div>
                 <div style={S.linksRow}>
-<a href="https://github.com/steff221/MedTech" target="_blank" rel="noopener noreferrer" style={{...S.linkBtn, ...(hoveredCard === 'proj1' ? S.linkBtnHover : {})}}>GitHub</a>
+                  <a href="https://github.com/steff221/MedTech" target="_blank" rel="noopener noreferrer" style={{...S.linkBtn, ...(hoveredCard === 'proj1' ? S.linkBtnHover : {})}}>GitHub</a>
                 </div>
               </div>
 
