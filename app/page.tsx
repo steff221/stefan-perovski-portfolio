@@ -347,8 +347,8 @@ const OrbitingMoon = ({ src, name, index, total }: {
   src: string; name: string; index: number; total: number;
 }) => {
   const ref = React.useRef<HTMLDivElement>(null);
-  const a = 128;   // semi-major axis px
-  const b = 46;    // semi-minor axis px  (gives ~70° tilt illusion)
+  const a = 168;   // semi-major axis px — wider for full-width card
+  const b = 58;    // semi-minor axis px  (gives ~70° tilt illusion)
   const period = 22000; // ms per orbit
   const phase = (index / total) * Math.PI * 2;
 
@@ -399,10 +399,10 @@ const PhotoCard = ({ isDark: _isDark }: { isDark: boolean }) => (
       overflow: "hidden",
       position: "relative",
       height: "100%",
-      minHeight: "440px",
+      minHeight: "460px",
       backgroundImage: "url(/portfolio.jpg)",
       backgroundSize: "cover",
-      backgroundPosition: "center 65%",
+      backgroundPosition: "center 60%",
     }}
   >
     {/* Animated gradient border */}
@@ -458,19 +458,17 @@ const PhotoCard = ({ isDark: _isDark }: { isDark: boolean }) => (
   </motion.div>
 );
 
-// Expertise Card with floating pill tags
+// Expertise Card — editorial numbered list
 const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
-  const tags = ["Full-Stack", "REST APIs", "Spring Boot", "React", "DevOps", "Database Design"];
-  const cardBg = isDark ? "#0a1128" : "#f0f6ff";
-  // [top%, left%, rotate] — kept away from edges so nothing clips
-  const positions: [number, number, number][] = [
-    [12, 8, -5],
-    [10, 52, 4],
-    [42, 3, 7],
-    [40, 50, -3],
-    [70, 10, -6],
-    [68, 52, 5],
+  const skills = [
+    { name: "Full-Stack Development", category: "Engineering" },
+    { name: "REST API Design",        category: "Backend"     },
+    { name: "Spring Boot",            category: "Backend"     },
+    { name: "React",                  category: "Frontend"    },
+    { name: "DevOps & CI/CD",         category: "Ops"         },
+    { name: "Database Design",        category: "Data"        },
   ];
+  const cardBg = isDark ? "#080e22" : "#f0f6ff";
 
   return (
     <motion.div
@@ -479,69 +477,83 @@ const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
       transition={{ duration: 0.6, delay: 0.1 }}
       viewport={{ once: true, amount: 0.2 }}
       style={{
-        gridColumn: "2 / 3",
+        gridColumn: "2 / 4",
         gridRow: "1 / 2",
         borderRadius: "20px",
-        border: "1px solid rgba(255,255,255,0.06)",
+        border: `1px solid ${isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.07)"}`,
         background: cardBg,
         position: "relative",
         overflow: "hidden",
-        minHeight: "220px",
+        padding: "24px 28px",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      {/* Faint radial glow */}
+      {/* Top accent bar */}
       <div style={{
-        position: "absolute", inset: 0, pointerEvents: "none",
-        background: "radial-gradient(ellipse at 80% 20%, rgba(96,165,250,0.06) 0%, transparent 65%)",
+        position: "absolute", top: 0, left: "28px", right: "28px", height: "1px",
+        background: "linear-gradient(to right, rgba(96,165,250,0.5), transparent)",
       }} />
 
-      {/* EXPERTISE watermark */}
-      <span style={{
-        position: "absolute", bottom: "-8px", right: "-4px",
-        fontSize: "72px", fontWeight: 900, lineHeight: 1,
-        fontFamily: "DM Serif Display, serif", letterSpacing: "-0.04em",
-        color: isDark ? "rgba(255,255,255,0.025)" : "rgba(0,0,0,0.04)",
-        userSelect: "none", pointerEvents: "none",
+      {/* Header */}
+      <p style={{
+        fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em",
+        color: isDark ? "#2d4a7a" : "#94a3b8", textTransform: "uppercase",
+        marginBottom: "18px",
       }}>
-        EXPERTISE
-      </span>
+        Core Skills
+      </p>
 
-      {/* Header label */}
-      <div style={{ position: "absolute", top: "20px", left: "22px" }}>
-        <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: isDark ? "#2d4a7a" : "#94a3b8", textTransform: "uppercase" }}>
-          Core Skills
-        </p>
-      </div>
-
-      {/* Tags layer */}
-      <div style={{ position: "absolute", inset: 0, top: "44px" }}>
-        {tags.map((tag, idx) => (
+      {/* Numbered skill rows */}
+      <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+        {skills.map((skill, idx) => (
           <motion.div
-            key={tag}
-            initial={{ opacity: 0, scale: 0.6, y: 10 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            whileHover={{ scale: 1.06, y: -2 }}
-            transition={{ duration: 0.45, delay: idx * 0.08, ease: "backOut" }}
+            key={skill.name}
+            initial={{ opacity: 0, x: -12 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            whileHover={{ x: 4 }}
+            transition={{ duration: 0.4, delay: 0.05 + idx * 0.06, ease: "easeOut" }}
             viewport={{ once: true }}
             style={{
-              position: "absolute",
-              top: `${positions[idx][0]}%`,
-              left: `${positions[idx][1]}%`,
-              rotate: `${positions[idx][2]}deg`,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "10px 0",
+              borderBottom: idx < skills.length - 1
+                ? `1px solid ${isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.06)"}`
+                : "none",
               cursor: "default",
             }}
           >
+            {/* Left: number + name */}
+            <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+              <span style={{
+                fontSize: "11px", fontWeight: 700, fontFamily: "DM Serif Display, serif",
+                color: isDark ? "rgba(96,165,250,0.35)" : "rgba(59,130,246,0.35)",
+                letterSpacing: "0.04em", minWidth: "22px",
+              }}>
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+              <span style={{
+                fontSize: "15px", fontWeight: 600,
+                color: isDark ? "#c8d8f0" : "#1e293b",
+                letterSpacing: "-0.01em",
+                fontFamily: "DM Serif Display, serif",
+              }}>
+                {skill.name}
+              </span>
+            </div>
+
+            {/* Right: category tag */}
             <span style={{
-              display: "inline-block",
-              padding: "8px 16px",
-              borderRadius: "999px",
-              background: isDark ? "rgba(13,21,50,0.95)" : "rgba(235,245,255,0.95)",
-              border: `1px solid ${isDark ? "rgba(96,165,250,0.2)" : "rgba(59,130,246,0.2)"}`,
-              color: isDark ? "#c8d8f0" : "#334155",
-              fontSize: "12px", fontWeight: 600, whiteSpace: "nowrap", letterSpacing: "0.02em",
-              boxShadow: isDark ? "0 2px 12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04)" : "0 2px 10px rgba(0,0,0,0.07)",
+              fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em",
+              textTransform: "uppercase",
+              color: isDark ? "rgba(96,165,250,0.4)" : "rgba(59,130,246,0.5)",
+              padding: "3px 10px", borderRadius: "999px",
+              border: `1px solid ${isDark ? "rgba(96,165,250,0.12)" : "rgba(59,130,246,0.15)"}`,
+              whiteSpace: "nowrap",
             }}>
-              {tag}
+              {skill.category}
             </span>
           </motion.div>
         ))}
@@ -565,7 +577,7 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
       background: "#030a1c",
       overflow: "hidden",
       position: "relative",
-      minHeight: "210px",
+      minHeight: "220px",
       display: "flex",
       flexDirection: "column",
     }}
@@ -608,12 +620,12 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
 
     {/* Planet — right side */}
     <div style={{
-      position: "absolute", right: "-30px", top: "50%",
+      position: "absolute", right: "-20px", top: "50%",
       transform: "translateY(-50%)",
       zIndex: 2,
       animation: "atmospherePulse 6s ease-in-out infinite",
     }}>
-      <Planet size={200} />
+      <Planet size={160} />
     </div>
 
     {/* Scrim so text stays readable */}
@@ -641,18 +653,19 @@ const ContactCard = ({ isDark: _isDark }: { isDark: boolean }) => {
       transition={{ duration: 0.6, delay: 0.3 }}
       viewport={{ once: true, amount: 0.2 }}
       style={{
-        gridColumn: "1 / 2",
+        gridColumn: "3 / 4",
+        gridRow: "2 / 3",
         borderRadius: "20px",
         border: "1px solid rgba(124,58,237,0.25)",
         background: "linear-gradient(140deg, #5b21b6 0%, #7c3aed 40%, #a855f7 100%)",
-        padding: "36px 32px",
+        padding: "28px 26px",
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-start",
         justifyContent: "space-between",
         position: "relative",
         overflow: "hidden",
-        minHeight: "180px",
+        minHeight: "220px",
       }}
     >
       {/* Decorative orb */}
@@ -743,13 +756,14 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
       transition={{ duration: 0.6, delay: 0.4 }}
       viewport={{ once: true, amount: 0.2 }}
       style={{
-        gridColumn: "2 / 3",
+        gridColumn: "1 / 4",
+        gridRow: "3 / 4",
         borderRadius: "20px",
         border: "1px solid rgba(96,165,250,0.1)",
         background: "#030a1c",
         overflow: "hidden",
         position: "relative",
-        minHeight: "420px",
+        minHeight: "360px",
         display: "flex",
         flexDirection: "column",
       }}
@@ -783,11 +797,11 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
       <div style={{ flex: 1, position: "relative", display: "flex", alignItems: "center", justifyContent: "center" }}>
 
         {/* Back-half ring — z-index 2 (behind planet) */}
-        <svg style={{ position: "absolute", zIndex: 2, pointerEvents: "none" }} width="310" height="120" viewBox="0 0 310 120">
-          <ellipse cx="155" cy="60" rx="148" ry="52"
+        <svg style={{ position: "absolute", zIndex: 2, pointerEvents: "none" }} width="380" height="140" viewBox="0 0 380 140">
+          <ellipse cx="190" cy="70" rx="180" ry="62"
             fill="none" stroke="rgba(96,165,250,0.28)" strokeWidth="1.5"
-            strokeDasharray={`${Math.PI * 148} ${Math.PI * 148}`}
-            strokeDashoffset={`${Math.PI * 148 / 2}`}
+            strokeDasharray={`${Math.PI * 180} ${Math.PI * 180}`}
+            strokeDashoffset={`${Math.PI * 180 / 2}`}
             style={{ animation: "ringShimmer 4s ease-in-out infinite" }}
           />
         </svg>
@@ -812,10 +826,10 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
         </div>
 
         {/* Front-half ring — z-index 8 (in front of planet) */}
-        <svg style={{ position: "absolute", zIndex: 8, pointerEvents: "none" }} width="310" height="120" viewBox="0 0 310 120">
-          <ellipse cx="155" cy="60" rx="148" ry="52"
+        <svg style={{ position: "absolute", zIndex: 8, pointerEvents: "none" }} width="380" height="140" viewBox="0 0 380 140">
+          <ellipse cx="190" cy="70" rx="180" ry="62"
             fill="none" stroke="rgba(96,165,250,0.45)" strokeWidth="2"
-            strokeDasharray={`${Math.PI * 148} ${Math.PI * 148}`}
+            strokeDasharray={`${Math.PI * 180} ${Math.PI * 180}`}
             strokeDashoffset="0"
             style={{ animation: "ringShimmer 4s ease-in-out infinite" }}
           />
@@ -1413,22 +1427,19 @@ export default function Home() {
           </nav>
 
 
-          {/* ABOUT - NEW BENTO GRID SECTION */}
+          {/* ABOUT - BENTO GRID */}
           <section id="about-grid" style={{ marginBottom: "64px" }}>
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
-                gap: "16px",
-                gridAutoRows: "auto",
+                gridTemplateColumns: "3fr 2fr 2fr",
+                gridTemplateRows: "auto auto auto",
+                gap: "14px",
               }}
             >
-              {/* Row 1 */}
               <PhotoCard isDark={isDark} />
               <ExpertiseCard isDark={isDark} />
               <LocationCard isDark={isDark} />
-
-              {/* Row 2 */}
               <ContactCard isDark={isDark} />
               <TechStackCard isDark={isDark} />
             </div>
