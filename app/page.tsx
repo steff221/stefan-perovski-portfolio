@@ -40,7 +40,7 @@ const keyframes = `
 
   @keyframes blink {
     0%, 49% {
-      border-right: 2px solid #7a9cc8;
+      border-right: 2px solid #a78bfa;
     }
     50%, 100% {
       border-right: 2px solid transparent;
@@ -49,10 +49,10 @@ const keyframes = `
 
   @keyframes glow {
     0%, 100% {
-      border-color: #1e3a6e;
+      border-color: #1e1040;
     }
     50% {
-      border-color: #60a5fa;
+      border-color: #a78bfa;
     }
   }
 
@@ -69,15 +69,15 @@ const keyframes = `
 
   @keyframes badgePulse {
     0% {
-      box-shadow: 0 0 0 rgba(96, 165, 250, 0);
+      box-shadow: 0 0 0 rgba(167, 139, 250, 0);
       transform: translateY(0);
     }
     50% {
-      box-shadow: 0 0 12px rgba(96, 165, 250, 0.35);
+      box-shadow: 0 0 12px rgba(167, 139, 250, 0.35);
       transform: translateY(-1px);
     }
     100% {
-      box-shadow: 0 0 0 rgba(96, 165, 250, 0);
+      box-shadow: 0 0 0 rgba(167, 139, 250, 0);
       transform: translateY(0);
     }
   }
@@ -106,19 +106,19 @@ const keyframes = `
 
   @keyframes glowPulse {
     0%, 100% {
-      box-shadow: 0 0 0 rgba(96, 165, 250, 0), inset 0 0 0 1px rgba(96, 165, 250, 0.2);
+      box-shadow: 0 0 0 rgba(167, 139, 250, 0), inset 0 0 0 1px rgba(167, 139, 250, 0.2);
     }
     50% {
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.4), inset 0 0 0 1px rgba(96, 165, 250, 0.5);
+      box-shadow: 0 0 20px rgba(167, 139, 250, 0.4), inset 0 0 0 1px rgba(167,139,250,0.5);
     }
   }
 
   @keyframes featurePulse {
     0%, 100% {
-      box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.4);
+      box-shadow: 0 0 0 0 rgba(167, 139, 250, 0.4);
     }
     50% {
-      box-shadow: 0 0 0 8px rgba(96, 165, 250, 0);
+      box-shadow: 0 0 0 8px rgba(167, 139, 250, 0);
     }
   }
 
@@ -142,10 +142,10 @@ const keyframes = `
 
   @keyframes pulseGlow {
     0%, 100% {
-      box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+      box-shadow: 0 0 20px rgba(167, 139, 250, 0.2);
     }
     50% {
-      box-shadow: 0 0 40px rgba(96, 165, 250, 0.4);
+      box-shadow: 0 0 40px rgba(167, 139, 250, 0.4);
     }
   }
 
@@ -170,25 +170,25 @@ const keyframes = `
 `;
 
 const darkTheme = {
-  bg: "#060d1f",
-  bgHero: "linear-gradient(180deg, rgba(14,30,70,0.45) 0%, transparent 100%)",
-  text: "#e2e8f0",
-  textSecondary: "#7a9cc8",
-  accentLight: "#60a5fa",
-  accentDark: "#1a3461",
-  cardBg: "#0d1a38",
-  btnBg: "#0d1b35",
+  bg: "#08060f",
+  bgHero: "linear-gradient(180deg, rgba(30,16,64,0.5) 0%, transparent 100%)",
+  text: "#ede9fe",
+  textSecondary: "#7c6fa0",
+  accentLight: "#a78bfa",
+  accentDark: "#1e1040",
+  cardBg: "#0f0c1e",
+  btnBg: "#140f24",
 };
 
 const lightTheme = {
-  bg: "#f8fafc",
-  bgHero: "linear-gradient(180deg, rgba(219,234,254,0.5) 0%, transparent 100%)",
-  text: "#1e293b",
-  textSecondary: "#475569",
-  accentLight: "#3b82f6",
-  accentDark: "#dbeafe",
+  bg: "#faf8ff",
+  bgHero: "linear-gradient(180deg, rgba(237,233,254,0.6) 0%, transparent 100%)",
+  text: "#1a1530",
+  textSecondary: "#5b5280",
+  accentLight: "#7c3aed",
+  accentDark: "#ede9fe",
   cardBg: "#ffffff",
-  btnBg: "#f1f5f9",
+  btnBg: "#f5f3ff",
 };
 
 const getThemeStyles = (isDark: boolean) => {
@@ -196,7 +196,7 @@ const getThemeStyles = (isDark: boolean) => {
   return {
     page: { background: theme.bg, minHeight: "100vh", color: theme.text, fontFamily: "DM Sans, sans-serif", fontSize: "15px", lineHeight: "1.7", transition: "background 0.3s ease, color 0.3s ease" },
     wrap: { maxWidth: "900px", margin: "0 auto", padding: "0 28px 100px" },
-    nav: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 28px", marginBottom: "52px", position: "sticky" as const, top: 0, zIndex: 100, background: isDark ? "rgba(6,13,31,0.82)" : "rgba(248,250,252,0.82)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderBottom: `1px solid ${isDark ? "rgba(96,165,250,0.08)" : "rgba(59,130,246,0.1)"}`, marginLeft: "-28px", marginRight: "-28px", transition: "background 0.3s ease" },
+    nav: { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "18px 28px", marginBottom: "52px", position: "sticky" as const, top: 0, zIndex: 100, background: isDark ? "rgba(8,6,15,0.88)" : "rgba(248,250,252,0.82)", backdropFilter: "blur(24px)", WebkitBackdropFilter: "blur(24px)", borderBottom: `1px solid ${isDark ? "rgba(167,139,250,0.08)" : "rgba(124,58,237,0.1)"}`, marginLeft: "-28px", marginRight: "-28px", transition: "background 0.3s ease" },
     navName: { fontFamily: "DM Serif Display, serif", fontSize: "16px", color: theme.text, letterSpacing: "0.01em" },
     navLinks: { display: "flex", gap: "24px", alignItems: "center" },
     navLink: { fontSize: "13px", color: theme.textSecondary, textDecoration: "none", letterSpacing: "0.04em", transition: "color 0.2s ease", cursor: "pointer" },
@@ -204,19 +204,19 @@ const getThemeStyles = (isDark: boolean) => {
     themeToggle: { background: theme.btnBg, border: `1px solid ${theme.accentDark}`, borderRadius: "8px", padding: "6px 10px", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", transition: "all 0.2s ease", width: "36px", height: "36px" },
     themeToggleHover: { borderColor: theme.accentLight },
     themeToggleIcon: { width: "20px", height: "20px", display: "flex", alignItems: "center", justifyContent: "center" },
-    hero: { display: "flex", gap: "40px", alignItems: "center", marginBottom: "64px", animation: "fadeIn 0.8s ease-out", padding: "40px 36px", borderRadius: "20px", background: theme.bgHero, border: `1px solid ${isDark ? "rgba(26,52,97,0.5)" : "rgba(219,234,254,0.8)"}` },
-    avatarRing: { width: "156px", height: "156px", borderRadius: "50%", flexShrink: 0, padding: "2px", background: isDark ? "linear-gradient(135deg, #3b82f6 0%, #1e3a6e 100%)" : "linear-gradient(135deg, #93c5fd 0%, #dbeafe 100%)" },
+    hero: { display: "flex", gap: "40px", alignItems: "center", marginBottom: "64px", animation: "fadeIn 0.8s ease-out", padding: "40px 36px", borderRadius: "20px", background: theme.bgHero, border: `1px solid ${isDark ? "rgba(30,16,64,0.5)" : "rgba(219,234,254,0.8)"}` },
+    avatarRing: { width: "156px", height: "156px", borderRadius: "50%", flexShrink: 0, padding: "2px", background: isDark ? "linear-gradient(135deg, #7c3aed 0%, #1e1040 100%)" : "linear-gradient(135deg, #c4b5fd 0%, #ede9fe 100%)" },
     avatar: { width: "100%", height: "100%", borderRadius: "50%", overflow: "hidden" as const, transition: "transform 0.3s ease" },
     avatarHover: { transform: "scale(1.04)" },
     h1: { fontFamily: "DM Serif Display, serif", fontSize: "38px", fontWeight: 400, marginBottom: "6px", lineHeight: "1.15", color: theme.text, letterSpacing: "-0.01em" },
     subtitle: { fontSize: "13px", color: theme.accentLight, marginBottom: "14px", letterSpacing: "0.01em" },
     bio: { color: theme.textSecondary, fontSize: "14px", maxWidth: "480px", marginBottom: "22px", lineHeight: "1.75", animation: "fadeIn 0.8s ease-out" },
     socialRow: { display: "flex", gap: "10px" },
-    socialBtn: { fontSize: "12px", padding: "7px 16px", border: `1px solid ${theme.accentDark}`, borderRadius: "8px", color: theme.textSecondary, textDecoration: "none", background: isDark ? "rgba(13,27,53,0.6)" : theme.btnBg, transition: "all 0.2s ease", cursor: "pointer", fontWeight: 500 },
+    socialBtn: { fontSize: "12px", padding: "7px 16px", border: `1px solid ${theme.accentDark}`, borderRadius: "8px", color: theme.textSecondary, textDecoration: "none", background: isDark ? "rgba(20,15,36,0.6)" : theme.btnBg, transition: "all 0.2s ease", cursor: "pointer", fontWeight: 500 },
     socialBtnHover: { borderColor: theme.accentLight, color: theme.accentLight },
-    sectionTitle: { fontFamily: "DM Serif Display, serif", fontSize: "24px", fontWeight: 400, color: theme.text, marginBottom: "28px", paddingBottom: "12px", borderBottom: `1px solid ${isDark ? "rgba(26,52,97,0.8)" : theme.accentDark}`, animation: "slideInLeft 0.7s ease-out", transition: "border-color 0.3s ease" },
+    sectionTitle: { fontFamily: "DM Serif Display, serif", fontSize: "24px", fontWeight: 400, color: theme.text, marginBottom: "28px", paddingBottom: "12px", borderBottom: `1px solid ${isDark ? "rgba(30,16,64,0.8)" : theme.accentDark}`, animation: "slideInLeft 0.7s ease-out", transition: "border-color 0.3s ease" },
     card: { background: theme.cardBg, border: `1px solid ${theme.accentDark}`, borderRadius: "14px", padding: "20px 22px", marginBottom: "14px", transition: "border-color 0.2s ease, transform 0.2s ease", animation: "fadeIn 0.6s ease-out" },
-    cardHover: { borderColor: `${isDark ? "rgba(96,165,250,0.4)" : "#93c5fd"}`, transform: "translateY(-2px)" },
+    cardHover: { borderColor: `${isDark ? "rgba(167,139,250,0.4)" : "#c4b5fd"}`, transform: "translateY(-2px)" },
     cardHeader: { display: "flex", alignItems: "center", gap: "14px", marginBottom: "10px" },
     logo: { width: "38px", height: "38px", borderRadius: "10px", background: theme.btnBg, border: `1px solid ${theme.accentDark}`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "10px", fontWeight: 600, color: theme.accentLight, flexShrink: 0, overflow: "hidden" as const },
     cardTitle: { fontSize: "15px", fontWeight: 600, color: theme.text },
@@ -225,21 +225,21 @@ const getThemeStyles = (isDark: boolean) => {
     bullet: { fontSize: "13px", color: theme.textSecondary, marginBottom: "4px" },
     skillsGrid: { display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "16px", marginBottom: "28px" },
     skillCard: { background: theme.cardBg, border: `1px solid ${theme.accentDark}`, borderRadius: "14px", padding: "24px 20px", textAlign: "center" as const, transition: "border-color 0.2s ease, transform 0.2s ease", animation: "fadeIn 0.6s ease-out" },
-    skillCardHover: { borderColor: `${isDark ? "rgba(96,165,250,0.4)" : "#93c5fd"}`, transform: "translateY(-3px)" },
+    skillCardHover: { borderColor: `${isDark ? "rgba(167,139,250,0.4)" : "#c4b5fd"}`, transform: "translateY(-3px)" },
     skillIcon: { width: "60px", height: "60px", margin: "0 auto 14px", position: "relative" as const },
     skillTitle: { fontSize: "14px", fontWeight: 500, color: theme.text, marginBottom: "8px" },
     skillDesc: { fontSize: "12px", color: theme.textSecondary, lineHeight: "1.55" },
     projGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" },
     projCard: { background: theme.cardBg, border: `1px solid ${theme.accentDark}`, borderRadius: "14px", padding: "20px", transition: "border-color 0.2s ease, transform 0.2s ease", animation: "fadeIn 0.6s ease-out" },
-    projCardHover: { borderColor: `${isDark ? "rgba(96,165,250,0.4)" : "#93c5fd"}`, transform: "translateY(-3px)" },
+    projCardHover: { borderColor: `${isDark ? "rgba(167,139,250,0.4)" : "#c4b5fd"}`, transform: "translateY(-3px)" },
     projTitleRow: { display: "flex", alignItems: "center", gap: "8px" },
     projTitle: { fontSize: "14px", fontWeight: 600, color: theme.text, marginBottom: "5px" },
     featuredBadge: { fontSize: "10px", padding: "2px 8px", borderRadius: "999px", border: `1px solid ${theme.accentLight}`, color: theme.accentLight, letterSpacing: "0.06em", textTransform: "uppercase" as const, transition: "all 0.2s ease" },
     featuredBadgeHover: { animation: "badgePulse 0.8s ease-in-out" },
     projDesc: { fontSize: "13px", color: theme.textSecondary, marginBottom: "12px", lineHeight: "1.6" },
     tagsRow: { display: "flex", flexWrap: "wrap" as const, gap: "5px", marginBottom: "12px" },
-    tag: { fontSize: "10px", padding: "3px 9px", background: `${isDark ? "rgba(59,130,246,0.08)" : "rgba(59,130,246,0.05)"}`, border: `1px solid ${isDark ? "rgba(59,130,246,0.25)" : "rgba(59,130,246,0.2)"}`, borderRadius: "6px", color: isDark ? "#7ab8fb" : "#3b82f6", transition: "all 0.2s ease", fontWeight: 500 },
-    tagHover: { background: `${isDark ? "rgba(59,130,246,0.15)" : "rgba(59,130,246,0.08)"}`, borderColor: `${isDark ? "rgba(96, 165, 250, 0.5)" : "rgba(59,130,246,0.35)"}` },
+    tag: { fontSize: "10px", padding: "3px 9px", background: `${isDark ? "rgba(139,92,246,0.1)" : "rgba(139,92,246,0.06)"}`, border: `1px solid ${isDark ? "rgba(139,92,246,0.3)" : "rgba(139,92,246,0.2)"}`, borderRadius: "6px", color: isDark ? "#c4b5fd" : "#7c3aed", transition: "all 0.2s ease", fontWeight: 500 },
+    tagHover: { background: `${isDark ? "rgba(124,58,237,0.15)" : "rgba(139,92,246,0.1)"}`, borderColor: `${isDark ? "rgba(167,139,250,0.5)" : "rgba(124,58,237,0.35)"}` },
     linksRow: { display: "flex", gap: "8px" },
     linkBtn: { fontSize: "11px", color: theme.textSecondary, textDecoration: "none", padding: "5px 12px", border: `1px solid ${theme.accentDark}`, borderRadius: "8px", transition: "all 0.2s ease", fontWeight: 500 },
     linkBtnHover: { borderColor: theme.accentLight, color: theme.accentLight },
@@ -248,7 +248,7 @@ const getThemeStyles = (isDark: boolean) => {
     stackBadges: { display: "flex", flexWrap: "wrap" as const, gap: "7px" },
     badge: { fontSize: "12px", padding: "5px 13px", background: theme.cardBg, border: `1px solid ${theme.accentDark}`, borderRadius: "8px", color: theme.text, transition: "border-color 0.2s ease, color 0.2s ease", fontWeight: 500 },
     badgeHover: { borderColor: theme.accentLight, color: theme.accentLight },
-    footer: { paddingTop: "48px", borderTop: `1px solid ${isDark ? "rgba(96,165,250,0.08)" : "rgba(0,0,0,0.08)"}`, transition: "border-color 0.3s ease" },
+    footer: { paddingTop: "48px", borderTop: `1px solid ${isDark ? "rgba(167,139,250,0.08)" : "rgba(0,0,0,0.08)"}`, transition: "border-color 0.3s ease" },
   };
 };
 
@@ -329,7 +329,7 @@ const Planet = ({ size = 190 }: { size?: number }) => {
         const op = d.land ? 0.35 + t * 0.65 : 0.08 + t * 0.45;
         return (
           <circle key={i} cx={d.px} cy={d.py} r={r}
-            fill={d.land ? "#86efac" : "#93c5fd"} opacity={op} />
+            fill={d.land ? "#86efac" : "#c4b5fd"} opacity={op} />
         );
       })}
       {/* Night-side shadow */}
@@ -411,7 +411,7 @@ const PhotoCard = ({ isDark: _isDark }: { isDark: boolean }) => (
       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       style={{
         position: "absolute", inset: 0, borderRadius: "20px",
-        boxShadow: "inset 0 0 0 1px rgba(96,165,250,0.25)",
+        boxShadow: "inset 0 0 0 1px rgba(167,139,250,0.25)",
         pointerEvents: "none", zIndex: 10,
       }}
     />
@@ -419,7 +419,7 @@ const PhotoCard = ({ isDark: _isDark }: { isDark: boolean }) => (
     {/* Scrim — heavier at bottom, subtle at top */}
     <div style={{
       position: "absolute", inset: 0,
-      background: "linear-gradient(to top, rgba(3,9,22,0.98) 0%, rgba(3,9,22,0.6) 40%, rgba(3,9,22,0.15) 70%, rgba(3,9,22,0.0) 100%)",
+      background: "linear-gradient(to top, rgba(5,3,14,0.98) 0%, rgba(5,3,14,0.6) 40%, rgba(5,3,14,0.15) 70%, rgba(5,3,14,0.0) 100%)",
     }} />
 
     {/* Available badge */}
@@ -444,15 +444,15 @@ const PhotoCard = ({ isDark: _isDark }: { isDark: boolean }) => (
     {/* Bottom content */}
     <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "32px 28px", zIndex: 5 }}>
       {/* Thin accent line */}
-      <div style={{ width: "32px", height: "2px", background: "rgba(96,165,250,0.7)", borderRadius: "1px", marginBottom: "14px" }} />
-      <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: "rgba(96,165,250,0.75)", textTransform: "uppercase", marginBottom: "8px" }}>
+      <div style={{ width: "32px", height: "2px", background: "rgba(167,139,250,0.7)", borderRadius: "1px", marginBottom: "14px" }} />
+      <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em", color: "rgba(167,139,250,0.75)", textTransform: "uppercase", marginBottom: "8px" }}>
         Software Engineer
       </p>
       <h2 style={{ fontSize: "34px", fontWeight: 700, marginBottom: "12px", fontFamily: "DM Serif Display, serif", color: "#fff", lineHeight: 1.05 }}>
         Stefan<br />Perovski
       </h2>
       <p style={{ fontSize: "13px", color: "rgba(148,163,184,0.85)", lineHeight: "1.7", maxWidth: "300px" }}>
-        CS student at FINKI. Building impactful software and driving digital transformation.
+        Software Engineering student at FINKI. Building impactful software and driving digital transformation.
       </p>
     </div>
   </motion.div>
@@ -468,7 +468,7 @@ const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
     { name: "DevOps & CI/CD",         category: "Ops"         },
     { name: "Database Design",        category: "Data"        },
   ];
-  const cardBg = isDark ? "#080e22" : "#f0f6ff";
+  const cardBg = isDark ? "#0c0918" : "#f0f6ff";
 
   return (
     <motion.div
@@ -492,13 +492,13 @@ const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
       {/* Top accent bar */}
       <div style={{
         position: "absolute", top: 0, left: "28px", right: "28px", height: "1px",
-        background: "linear-gradient(to right, rgba(96,165,250,0.5), transparent)",
+        background: "linear-gradient(to right, rgba(167,139,250,0.5), transparent)",
       }} />
 
       {/* Header */}
       <p style={{
         fontSize: "10px", fontWeight: 700, letterSpacing: "0.14em",
-        color: isDark ? "#2d4a7a" : "#94a3b8", textTransform: "uppercase",
+        color: isDark ? "#4a3878" : "#94a3b8", textTransform: "uppercase",
         marginBottom: "18px",
       }}>
         Core Skills
@@ -529,7 +529,7 @@ const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
             <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
               <span style={{
                 fontSize: "11px", fontWeight: 700, fontFamily: "DM Serif Display, serif",
-                color: isDark ? "rgba(96,165,250,0.35)" : "rgba(59,130,246,0.35)",
+                color: isDark ? "rgba(167,139,250,0.35)" : "rgba(124,58,237,0.35)",
                 letterSpacing: "0.04em", minWidth: "22px",
               }}>
                 {String(idx + 1).padStart(2, "0")}
@@ -548,9 +548,9 @@ const ExpertiseCard = ({ isDark }: { isDark: boolean }) => {
             <span style={{
               fontSize: "10px", fontWeight: 700, letterSpacing: "0.08em",
               textTransform: "uppercase",
-              color: isDark ? "rgba(96,165,250,0.4)" : "rgba(59,130,246,0.5)",
+              color: isDark ? "rgba(167,139,250,0.4)" : "rgba(124,58,237,0.5)",
               padding: "3px 10px", borderRadius: "999px",
-              border: `1px solid ${isDark ? "rgba(96,165,250,0.12)" : "rgba(59,130,246,0.15)"}`,
+              border: `1px solid ${isDark ? "rgba(167,139,250,0.12)" : "rgba(124,58,237,0.15)"}`,
               whiteSpace: "nowrap",
             }}>
               {skill.category}
@@ -573,8 +573,8 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
       gridColumn: "2 / 3",
       gridRow: "2 / 3",
       borderRadius: "20px",
-      border: "1px solid rgba(96,165,250,0.12)",
-      background: "#030a1c",
+      border: "1px solid rgba(167,139,250,0.12)",
+      background: "#07040e",
       overflow: "hidden",
       position: "relative",
       minHeight: "220px",
@@ -597,7 +597,7 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
 
     {/* Text overlay top-left */}
     <div style={{ position: "absolute", top: "22px", left: "24px", zIndex: 5 }}>
-      <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#2d4a7a", textTransform: "uppercase", marginBottom: "8px" }}>
+      <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#4a3878", textTransform: "uppercase", marginBottom: "8px" }}>
         Based in
       </p>
       <p style={{ fontSize: "20px", fontWeight: 700, color: "#e2e8f0", fontFamily: "DM Serif Display, serif", lineHeight: 1.1 }}>
@@ -615,7 +615,7 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
         transition={{ duration: 2, repeat: Infinity }}
         style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#22c55e", display: "inline-block" }}
       />
-      <span style={{ fontSize: "11px", color: "#64748b", fontWeight: 500 }}>Open to remote worldwide</span>
+      <span style={{ fontSize: "11px", color: "#6b6590", fontWeight: 500 }}>Open to remote worldwide</span>
     </div>
 
     {/* Planet — right side */}
@@ -631,7 +631,7 @@ const LocationCard = ({ isDark: _isDark }: { isDark: boolean }) => (
     {/* Scrim so text stays readable */}
     <div style={{
       position: "absolute", inset: 0, pointerEvents: "none",
-      background: "linear-gradient(to right, rgba(3,10,28,0.85) 30%, rgba(3,10,28,0.1) 70%)",
+      background: "linear-gradient(to right, rgba(7,4,14,0.85) 30%, rgba(7,4,14,0.1) 70%)",
     }} />
   </motion.div>
 );
@@ -759,8 +759,8 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
         gridColumn: "1 / 4",
         gridRow: "3 / 4",
         borderRadius: "20px",
-        border: "1px solid rgba(96,165,250,0.1)",
-        background: "#030a1c",
+        border: "1px solid rgba(167,139,250,0.1)",
+        background: "#07040e",
         overflow: "hidden",
         position: "relative",
         minHeight: "360px",
@@ -785,7 +785,7 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
 
       {/* Label */}
       <div style={{ position: "absolute", top: "24px", left: "26px", zIndex: 10 }}>
-        <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#2d4a7a", textTransform: "uppercase", marginBottom: "4px" }}>
+        <p style={{ fontSize: "10px", fontWeight: 700, letterSpacing: "0.12em", color: "#4a3878", textTransform: "uppercase", marginBottom: "4px" }}>
           Tech Stack
         </p>
         <p style={{ fontSize: "16px", fontWeight: 700, color: "#e2e8f0", fontFamily: "DM Serif Display, serif" }}>
@@ -820,7 +820,7 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
           <div style={{
             width: "72px", height: "72px", borderRadius: "50%",
             background: "radial-gradient(circle at 35% 30%, #93c5fd 0%, #2563eb 35%, #1e3a8a 65%, #020b1f 100%)",
-            boxShadow: "0 0 32px rgba(59,130,246,0.55), 0 0 64px rgba(59,130,246,0.2)",
+            boxShadow: "0 0 32px rgba(59,130,246,0.55), 0 0 64px rgba(139,92,246,0.2)",
             position: "relative",
           }} />
         </div>
@@ -853,7 +853,7 @@ const TechStackCard = ({ isDark: _isDark }: { isDark: boolean }) => {
         display: "flex", justifyContent: "center",
         zIndex: 10, pointerEvents: "none",
       }}>
-        <p style={{ fontSize: "10px", color: "#1e3a5f", letterSpacing: "0.08em" }}>
+        <p style={{ fontSize: "10px", color: "#2d1f4a", letterSpacing: "0.08em" }}>
           Hover an icon to see the name
         </p>
       </div>
@@ -876,7 +876,7 @@ const AnimatedSectionTitle = ({ children, isDark, index }: { children: React.Rea
         <span style={{
           display: "block",
           fontSize: "11px", fontWeight: 700, letterSpacing: "0.14em",
-          color: isDark ? "rgba(96,165,250,0.5)" : "#94a3b8",
+          color: isDark ? "rgba(167,139,250,0.5)" : "#94a3b8",
           textTransform: "uppercase", marginBottom: "6px",
         }}>
           {index}
@@ -899,8 +899,8 @@ const AnimatedSectionTitle = ({ children, isDark, index }: { children: React.Rea
           style={{
             flex: 1, height: "1px",
             background: isDark
-              ? "linear-gradient(to right, rgba(96,165,250,0.5), transparent)"
-              : "linear-gradient(to right, rgba(59,130,246,0.3), transparent)",
+              ? "linear-gradient(to right, rgba(167,139,250,0.5), transparent)"
+              : "linear-gradient(to right, rgba(139,92,246,0.4), transparent)",
             transformOrigin: "left",
           }}
         />
@@ -938,13 +938,13 @@ const ExperienceCard = ({
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0, width: "20px" }}>
         <div style={{
           width: "12px", height: "12px", borderRadius: "50%", flexShrink: 0, marginTop: "4px",
-          background: isDark ? "#3b82f6" : "#60a5fa",
-          boxShadow: isDark ? "0 0 0 3px rgba(59,130,246,0.18), 0 0 12px rgba(59,130,246,0.3)" : "0 0 0 3px rgba(96,165,250,0.2)",
+          background: isDark ? "#7c3aed" : "#a78bfa",
+          boxShadow: isDark ? "0 0 0 3px rgba(139,92,246,0.2), 0 0 12px rgba(139,92,246,0.4)" : "0 0 0 3px rgba(167,139,250,0.2)",
         }} />
         {!isLast && (
           <div style={{
             flex: 1, width: "1px", marginTop: "6px",
-            background: isDark ? "linear-gradient(to bottom, rgba(59,130,246,0.35), transparent)" : "linear-gradient(to bottom, rgba(59,130,246,0.2), transparent)",
+            background: isDark ? "linear-gradient(to bottom, rgba(124,58,237,0.35), transparent)" : "linear-gradient(to bottom, rgba(139,92,246,0.2), transparent)",
           }} />
         )}
       </div>
@@ -958,7 +958,7 @@ const ExperienceCard = ({
           flex: 1,
           background: isDark ? "rgba(10,18,40,0.7)" : "rgba(255,255,255,0.85)",
           backdropFilter: "blur(12px)",
-          border: `1px solid ${isDark ? "rgba(96,165,250,0.1)" : "rgba(59,130,246,0.12)"}`,
+          border: `1px solid ${isDark ? "rgba(167,139,250,0.1)" : "rgba(124,58,237,0.12)"}`,
           borderRadius: "16px",
           padding: "20px 24px",
           cursor: bullets.length > 1 ? "pointer" : "default",
@@ -968,9 +968,9 @@ const ExperienceCard = ({
         {/* Date chip */}
         <span style={{
           display: "inline-block", fontSize: "10px", fontWeight: 600,
-          letterSpacing: "0.08em", color: isDark ? "rgba(96,165,250,0.7)" : "#64748b",
-          background: isDark ? "rgba(59,130,246,0.08)" : "rgba(59,130,246,0.06)",
-          border: `1px solid ${isDark ? "rgba(96,165,250,0.15)" : "rgba(59,130,246,0.15)"}`,
+          letterSpacing: "0.08em", color: isDark ? "rgba(167,139,250,0.7)" : "#6b6590",
+          background: isDark ? "rgba(139,92,246,0.1)" : "rgba(124,58,237,0.06)",
+          border: `1px solid ${isDark ? "rgba(167,139,250,0.15)" : "rgba(124,58,237,0.15)"}`,
           borderRadius: "999px", padding: "3px 10px", marginBottom: "10px",
         }}>
           {meta}
@@ -988,14 +988,14 @@ const ExperienceCard = ({
           <div>
             {(open ? bullets : bullets.slice(0, 1)).map((b, i) => (
               <div key={i} style={{ display: "flex", gap: "10px", alignItems: "flex-start", marginBottom: "6px" }}>
-                <span style={{ color: isDark ? "rgba(96,165,250,0.5)" : "#94a3b8", marginTop: "2px", fontSize: "12px", flexShrink: 0 }}>→</span>
+                <span style={{ color: isDark ? "rgba(167,139,250,0.5)" : "#94a3b8", marginTop: "2px", fontSize: "12px", flexShrink: 0 }}>→</span>
                 <span style={{ fontSize: "13px", color: theme.textSecondary, lineHeight: "1.65" }}>{b}</span>
               </div>
             ))}
             {bullets.length > 1 && (
               <button onClick={(e) => { e.stopPropagation(); setOpen(!open); }} style={{
                 marginTop: "6px", fontSize: "11px", fontWeight: 600,
-                color: isDark ? "rgba(96,165,250,0.7)" : "#60a5fa",
+                color: isDark ? "rgba(167,139,250,0.7)" : "#a78bfa",
                 background: "none", border: "none", cursor: "pointer", padding: 0,
                 letterSpacing: "0.04em",
               }}>
@@ -1016,11 +1016,12 @@ const ProjectCard = ({
   description,
   tags,
   featured,
+  logo,
   links,
   isDark,
 }: {
   id: string; title: string; description: string; tags: string[];
-  featured?: boolean; links: { label: string; href: string }[]; isDark: boolean;
+  featured?: boolean; logo?: string; links: { label: string; href: string }[]; isDark: boolean;
 }) => {
   const theme = isDark ? darkTheme : lightTheme;
   const [rotateX, setRotateX] = React.useState(0);
@@ -1047,8 +1048,8 @@ const ProjectCard = ({
       style={{
         background: isDark ? "rgba(10,18,40,0.8)" : "rgba(255,255,255,0.9)",
         border: `1px solid ${isHovered
-          ? (isDark ? "rgba(96,165,250,0.35)" : "rgba(59,130,246,0.4)")
-          : (isDark ? "rgba(96,165,250,0.1)" : "rgba(59,130,246,0.12)")}`,
+          ? (isDark ? "rgba(167,139,250,0.35)" : "rgba(139,92,246,0.5)")
+          : (isDark ? "rgba(167,139,250,0.1)" : "rgba(124,58,237,0.12)")}`,
         borderRadius: "18px",
         padding: "24px",
         transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(${isHovered ? "-3px" : "0"})`,
@@ -1056,7 +1057,7 @@ const ProjectCard = ({
         position: "relative",
         overflow: "hidden",
         boxShadow: isHovered
-          ? (isDark ? "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(96,165,250,0.1)" : "0 12px 40px rgba(0,0,0,0.1)")
+          ? (isDark ? "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(167,139,250,0.1)" : "0 12px 40px rgba(0,0,0,0.1)")
           : "none",
       }}
     >
@@ -1064,7 +1065,7 @@ const ProjectCard = ({
       {featured && (
         <div style={{
           position: "absolute", top: 0, left: 0, right: 0, height: "2px",
-          background: "linear-gradient(90deg, #3b82f6, #a855f7, #3b82f6)",
+          background: "linear-gradient(90deg, #7c3aed, #c084fc, #7c3aed)",
           backgroundSize: "200% 100%",
           animation: "ringShimmer 3s linear infinite",
         }} />
@@ -1074,19 +1075,35 @@ const ProjectCard = ({
       {isHovered && (
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none", borderRadius: "18px",
-          background: "radial-gradient(ellipse at 50% 0%, rgba(96,165,250,0.08) 0%, transparent 65%)",
+          background: "radial-gradient(ellipse at 50% 0%, rgba(167,139,250,0.08) 0%, transparent 65%)",
         }} />
       )}
 
+      {/* Logo + title row */}
+      {logo && (
+        <div style={{ marginBottom: "14px" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={logo}
+            alt={title + " logo"}
+            style={{
+              width: "52px", height: "52px", borderRadius: "14px",
+              objectFit: "cover",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.4)",
+              border: "1px solid rgba(167,139,250,0.15)",
+            }}
+          />
+        </div>
+      )}
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: "10px" }}>
         <h3 style={{ fontSize: "15px", fontWeight: 700, color: theme.text, lineHeight: 1.3 }}>{title}</h3>
         {featured && (
           <span style={{
             fontSize: "9px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase",
             padding: "3px 9px", borderRadius: "999px",
-            background: "linear-gradient(135deg, rgba(59,130,246,0.15), rgba(168,85,247,0.15))",
-            border: "1px solid rgba(96,165,250,0.3)",
-            color: isDark ? "#93c5fd" : "#3b82f6",
+            background: "linear-gradient(135deg, rgba(139,92,246,0.15), rgba(168,85,247,0.15))",
+            border: "1px solid rgba(167,139,250,0.3)",
+            color: isDark ? "#c4b5fd" : "#7c3aed",
             whiteSpace: "nowrap", marginLeft: "10px", flexShrink: 0,
           }}>
             Featured
@@ -1102,9 +1119,9 @@ const ProjectCard = ({
         {tags.map((tag) => (
           <span key={tag} style={{
             fontSize: "10px", fontWeight: 600, padding: "4px 10px",
-            background: isDark ? "rgba(96,165,250,0.07)" : "rgba(59,130,246,0.06)",
-            border: `1px solid ${isDark ? "rgba(96,165,250,0.18)" : "rgba(59,130,246,0.18)"}`,
-            borderRadius: "999px", color: isDark ? "#7ab8fb" : "#3b82f6",
+            background: isDark ? "rgba(167,139,250,0.08)" : "rgba(124,58,237,0.06)",
+            border: `1px solid ${isDark ? "rgba(167,139,250,0.18)" : "rgba(139,92,246,0.2)"}`,
+            borderRadius: "999px", color: isDark ? "#c4b5fd" : "#7c3aed",
             letterSpacing: "0.02em",
           }}>
             {tag}
@@ -1117,11 +1134,11 @@ const ProjectCard = ({
           <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer"
             style={{
               display: "inline-flex", alignItems: "center", gap: "5px",
-              fontSize: "12px", fontWeight: 600, color: isDark ? "#93c5fd" : "#3b82f6",
+              fontSize: "12px", fontWeight: 600, color: isDark ? "#c4b5fd" : "#7c3aed",
               textDecoration: "none", padding: "6px 14px",
-              border: `1px solid ${isDark ? "rgba(96,165,250,0.2)" : "rgba(59,130,246,0.25)"}`,
+              border: `1px solid ${isDark ? "rgba(167,139,250,0.2)" : "rgba(139,92,246,0.3)"}`,
               borderRadius: "8px",
-              background: isDark ? "rgba(59,130,246,0.06)" : "rgba(59,130,246,0.04)",
+              background: isDark ? "rgba(124,58,237,0.06)" : "rgba(124,58,237,0.04)",
               transition: "all 0.2s ease",
             }}
           >
@@ -1214,12 +1231,12 @@ const VideoHeroSection = () => {
       {/* Permanent dark overlay — keeps text readable */}
       <div style={{
         position: "absolute", inset: 0, pointerEvents: "none",
-        background: "linear-gradient(to bottom, rgba(6,13,31,0.35) 0%, rgba(6,13,31,0.15) 45%, rgba(6,13,31,0.65) 80%, #060d1f 100%)",
+        background: "linear-gradient(to bottom, rgba(8,6,15,0.35) 0%, rgba(8,6,15,0.15) 45%, rgba(8,6,15,0.65) 80%, #08060f 100%)",
       }} />
 
       {/* Scroll-driven extra darkening */}
       <motion.div style={{
-        position: "absolute", inset: 0, background: "#060d1f", opacity: overlayOpacity, pointerEvents: "none",
+        position: "absolute", inset: 0, background: "#08060f", opacity: overlayOpacity, pointerEvents: "none",
       }} />
 
       {/* Centered headline — fades + lifts as user scrolls */}
@@ -1233,7 +1250,7 @@ const VideoHeroSection = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
-          style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(96,165,250,0.75)", textTransform: "uppercase", marginBottom: "22px" }}
+          style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.22em", color: "rgba(167,139,250,0.75)", textTransform: "uppercase", marginBottom: "22px" }}
         >
           Portfolio · 2026
         </motion.p>
@@ -1347,22 +1364,24 @@ export default function Home() {
   const projectsData = [
     {
       id: "proj1",
+      title: "MedTech App",
+      description: "Full-stack medical administration and patient management system built with React, Java Spring Boot, and PostgreSQL.",
+      tags: ["React", "Java", "Spring Boot", "PostgreSQL"],
+      featured: true,
+      logo: "/MedTech.png",
+      links: [{ label: "GitHub", href: "https://github.com/steff221/MedTech2.0.git" }],
+    },
+    {
+      id: "proj2",
       title: "WaterWatch",
       description: "Early warning platform for river water anomalies using Sentinel-1/2 imagery, z-score analysis, and citizen crowdsourcing.",
       tags: ["Python", "Flask", "React", "Copernicus API"],
-      featured: true,
+      featured: false,
+      logo: undefined,
       links: [
         { label: "Live", href: "https://water-watch-2t91.vercel.app" },
         { label: "GitHub", href: "https://github.com/steff221/WaterWatch" },
       ],
-    },
-    {
-      id: "proj2",
-      title: "MedTech App",
-      description: "Medical technology application with a Java backend, React frontend, and Oracle SQL database.",
-      tags: ["React", "Java", "Oracle SQL"],
-      featured: false,
-      links: [{ label: "GitHub", href: "https://github.com/steff221/MedTech" }],
     },
   ];
 
@@ -1470,7 +1489,7 @@ export default function Home() {
             <AnimatedSectionTitle isDark={isDark} index="02 — Education">Education</AnimatedSectionTitle>
             <div style={{
               background: isDark ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.02)",
-              border: `1px solid ${isDark ? "rgba(96,165,250,0.1)" : "rgba(0,0,0,0.07)"}`,
+              border: `1px solid ${isDark ? "rgba(167,139,250,0.1)" : "rgba(0,0,0,0.07)"}`,
               borderRadius: "20px",
               padding: "32px",
               display: "flex",
@@ -1479,14 +1498,16 @@ export default function Home() {
             }}>
               {/* Left: logo column */}
               <div style={{
-                width: "52px", height: "52px", borderRadius: "14px", flexShrink: 0,
-                background: isDark ? "rgba(96,165,250,0.1)" : "rgba(59,130,246,0.08)",
-                border: `1px solid ${isDark ? "rgba(96,165,250,0.2)" : "rgba(59,130,246,0.15)"}`,
+                width: "56px", height: "56px", borderRadius: "14px", flexShrink: 0,
+                background: "#fff",
+                border: `1px solid ${isDark ? "rgba(167,139,250,0.15)" : "rgba(124,58,237,0.12)"}`,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                fontWeight: 700, fontSize: "13px", letterSpacing: "0.03em",
-                color: isDark ? "#60a5fa" : "#3b82f6",
-                fontFamily: "DM Serif Display, serif",
-              }}>FCSE</div>
+                overflow: "hidden",
+                padding: "6px",
+              }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/Finki logo.png" alt="FINKI logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
+              </div>
               {/* Right: content */}
               <div style={{ flex: 1 }}>
                 <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "16px", flexWrap: "wrap", marginBottom: "6px" }}>
@@ -1494,15 +1515,15 @@ export default function Home() {
                     <p style={{ fontWeight: 600, fontSize: "17px", color: isDark ? "#e2e8f0" : "#1e293b", marginBottom: "3px" }}>
                       Faculty of Computer Science and Engineering
                     </p>
-                    <p style={{ fontSize: "14px", color: isDark ? "#94a3b8" : "#64748b" }}>
+                    <p style={{ fontSize: "14px", color: isDark ? "#94a3b8" : "#6b6590" }}>
                       Software Engineering · Ss. Cyril and Methodius University, Skopje
                     </p>
                   </div>
                   <span style={{
                     fontSize: "12px", fontWeight: 500, padding: "4px 12px", borderRadius: "999px", whiteSpace: "nowrap",
-                    background: isDark ? "rgba(96,165,250,0.1)" : "rgba(59,130,246,0.08)",
-                    color: isDark ? "#60a5fa" : "#3b82f6",
-                    border: `1px solid ${isDark ? "rgba(96,165,250,0.2)" : "rgba(59,130,246,0.15)"}`,
+                    background: isDark ? "rgba(167,139,250,0.1)" : "rgba(139,92,246,0.1)",
+                    color: isDark ? "#a78bfa" : "#7c3aed",
+                    border: `1px solid ${isDark ? "rgba(167,139,250,0.2)" : "rgba(124,58,237,0.15)"}`,
                   }}>Sep 2023 – Present</span>
                 </div>
                 <div style={{ marginTop: "16px", display: "flex", flexWrap: "wrap", gap: "8px" }}>
@@ -1510,7 +1531,7 @@ export default function Home() {
                     <span key={skill} style={{
                       fontSize: "12px", padding: "4px 12px", borderRadius: "999px",
                       background: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)",
-                      color: isDark ? "#94a3b8" : "#64748b",
+                      color: isDark ? "#94a3b8" : "#6b6590",
                       border: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.07)"}`,
                     }}>{skill}</span>
                   ))}
@@ -1531,6 +1552,7 @@ export default function Home() {
                   description={proj.description}
                   tags={proj.tags}
                   featured={proj.featured}
+                  logo={proj.logo}
                   links={proj.links}
                   isDark={isDark}
                 />
@@ -1571,7 +1593,7 @@ export default function Home() {
                     fontSize: "12px", fontWeight: 600,
                     color: isDark ? "#475569" : "#94a3b8",
                     textDecoration: "none", padding: "7px 16px",
-                    border: `1px solid ${isDark ? "rgba(96,165,250,0.1)" : "rgba(0,0,0,0.08)"}`,
+                    border: `1px solid ${isDark ? "rgba(167,139,250,0.1)" : "rgba(0,0,0,0.08)"}`,
                     borderRadius: "999px",
                     background: isDark ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.02)",
                     transition: "all 0.2s ease",
@@ -1581,7 +1603,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <p style={{ fontSize: "11px", color: isDark ? "#1e3a5f" : "#cbd5e1", letterSpacing: "0.04em" }}>
+            <p style={{ fontSize: "11px", color: isDark ? "#2d1f4a" : "#cbd5e1", letterSpacing: "0.04em" }}>
               © 2026 Stefan Perovski · Built with Next.js & Framer Motion
             </p>
           </footer>
